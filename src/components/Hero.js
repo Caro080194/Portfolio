@@ -3,12 +3,12 @@ import styled from "styled-components";
 const Hero = ({id}) => {
     return (
         <HeroContainer id={id}>
-            <Para1>
+            <Header1>
                 Hello, I am Caroline,
-            </Para1>
-            <Para2>
+            </Header1>
+            <Header2>
                 a junior developer
-            </Para2>
+            </Header2>
         </HeroContainer>
     )
 }
@@ -17,7 +17,7 @@ export default Hero;
 
 const HeroContainer = styled.div`
     background-color: var(--primary-color);
-    height: 600px;
+    height: 800px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     display: flex;
@@ -26,8 +26,7 @@ const HeroContainer = styled.div`
     align-items: center;
 `;
 
-const Para1 = styled.p`
-    color: var(--primary-color);
+const Header1 = styled.h1`
     -webkit-text-stroke: 0.5px white;
     text-shadow: 0.5px 0.5px 0px white;
     font-size: 4em;
@@ -36,9 +35,9 @@ const Para1 = styled.p`
     margin-bottom: 10px;
 `;
 
-const Para2 = styled.p`
+const Header2 = styled.h2`
     color: var(--secondary-color);
-    font-size: 2em; /* Adjust font size as needed */
+    font-size: 2em;
     font-weight: 700;
     font-size: 4em;
     text-align: center;

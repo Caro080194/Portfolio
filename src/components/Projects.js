@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Projects = ({id}) => {
     return (
         <ProjectsContainer id={id}>
-            <Para>Take a look at some of my projects</Para>
+            <Header>Take a look at some of my projects</Header>
             <ProjectCards>
                 <ProjectCard>
                     <ProjectBackgroundImage src="/assets/projet-1.png" alt="Project 1" />
@@ -37,12 +37,12 @@ export default Projects;
 const ProjectsContainer = styled.div `
 background-color: var(--primary-color);
 height: 600px;
+padding: 80px 20px;
 border-radius: 30px;
 `;
 
-const Para = styled.p `
+const Header = styled.h3 `
 color: var(--secondary-color);
-font-size: 2em;
 text-align: center;
 padding: 20px;
 `;
@@ -50,19 +50,20 @@ padding: 20px;
 const ProjectCards = styled.div `
     display: flex;
     justify-content: space-around;
+    margin-top: 90px;
 `;
 
 const ProjectCard = styled.div `
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 300px;
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
 
     &:hover {
-        transform: scale(2.1);
+        transform: scale(1.5);
     }
 `;
 

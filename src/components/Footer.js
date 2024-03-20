@@ -18,12 +18,12 @@ export default Footer;
 
 const FooterContainer = styled.div `
     width: 100%;
-    height: 120px;
+    height: 80px;
     background: var(--primary-color);
     border-radius: 40px 40px 0px 0px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 `;
 
 const Logo = styled.div`

@@ -8,25 +8,28 @@ const GlobalStyles = createGlobalStyle `
   
     /* Typography */
     --font-family: 'Alef', sans-serif;
-    --heading-font-size: 2rem;
-    --paragraph-font-size: 1rem;
+    --heading-font-size: 5rem;
   
   /* Global Styles */
   body {
     font-family: var(--font-family);
-    font-size: var(--paragraph-font-size);
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     margin: 0;
     padding: 0;
-    position: relative;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h4, h5, h6 {
     font-family: var(--font-family);
     font-weight: bold;
-    margin-top: var(--spacing-large);
-    margin-bottom: var(--spacing-medium);
+    font-size: var(--heading-font-size);
+  }
+
+  h3 {
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-size: 3em;
+    margin: 0;
   }
   
 `;

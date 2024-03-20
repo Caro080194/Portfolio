@@ -2,19 +2,10 @@ import useScreenSize from "../hooks/useScreenSize";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
+import handleClick from "../helps/navClick";
 
 
 const Navbar = () => {
-
-  const handleClick = (id) => {
-    const element = document.getElementById(id);
-
-    if (element) {
-      element.scrollIntoView({behavior: "smooth", block: "start"});
-    }
-    console.log("clicked", id);
-  };
-
 
   return (
     <Navcontainer>
@@ -27,7 +18,7 @@ const Navbar = () => {
         <Button onClick={() => handleClick("about")}>About me</Button>
         <Button onClick={() => handleClick("projects")}>Projects</Button>
         <Button onClick={() => handleClick("contacts")}>Contacts</Button>
-        <Button onClick={() => window.open('https://github.com/Caro080194/Portfolio/blob/main/CV.pdf', '_blank')}>CV</Button>
+        <Button onClick={() => window.open('https://raw.githubusercontent.com/Caro080194/Portfolio/main/CV.pdf', '_blank')}>CV</Button>
           <IconButton>
             <FontAwesomeIcon icon={faSun} />
           </IconButton>
@@ -58,6 +49,7 @@ const Logo = styled.div`
   align-items: center;
   gap: 1rem;
   font-weight: bold;
+  margin-left: 20px;
 `;
 
 const NavLink = styled.ul `
@@ -67,18 +59,6 @@ const NavLink = styled.ul `
   gap: 2rem;
 `;
 
-const IconButton = styled.button`
-  border: solid green;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-
-  svg {
-    color: var(--secondary-color);
-  }
-`;
-
 const Button = styled.button`
   margin: 0;
   padding: 20px;
@@ -86,12 +66,27 @@ const Button = styled.button`
   color: var(--secondary-color);
   border: none;
   cursor: pointer;
+  font-size: 1em;
   transition: background-color 0.3s ease;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
   }
+`;
 
-  /* Remove the 'a' styling here */
+const IconButton = styled(Button)`
+  border: solid green;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 15px;
+  margin-right: 20px;
+  svg {
+    color: var(--secondary-color);
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
 `;
