@@ -1,10 +1,8 @@
 import styled, {css} from "styled-components";
-import ParticulesBackground from "./ParticulesBackground";
 
 const Hero = ({id}) => {
     return (
         <HeroContainer id={id}>
-          <ParticulesBackground/>
             <Header1>
                 Hello, I am Caroline,
             </Header1>
