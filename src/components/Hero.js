@@ -1,8 +1,10 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import ParticulesBackground from "./ParticulesBackground";
 
 const Hero = ({id}) => {
     return (
         <HeroContainer id={id}>
+          <ParticulesBackground/>
             <Header1>
                 Hello, I am Caroline,
             </Header1>
@@ -17,13 +19,19 @@ export default Hero;
 
 const HeroContainer = styled.div`
     background-color: var(--primary-color);
-    height: 800px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    /* Phones CSS */
+    @media only screen and (max-width: 767px) {
+        height: 100vh;
+    }
 `;
 
 const Header1 = styled.h1`
@@ -33,6 +41,12 @@ const Header1 = styled.h1`
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
+
+    /* Phones CSS */
+    @media only screen and (max-width: 767px) {
+        font-size: 4em;
+        line-height: 2;
+    }
 `;
 
 const Header2 = styled.h2`
@@ -42,4 +56,9 @@ const Header2 = styled.h2`
     font-size: 4em;
     text-align: center;
     margin-top: 0;
+
+    /* Phones CSS */
+    @media only screen and (max-width: 767px) {
+        font-size: 2.5em;
+    }
 `;

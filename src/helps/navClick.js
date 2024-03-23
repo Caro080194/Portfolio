@@ -8,4 +8,9 @@ const handleClick = (id) => {
     console.log("clicked", id);
   };
 
-  export default handleClick;
+const handleMobileClick = (id, toggleMenu) => {
+  handleClick(id);
+  toggleMenu()
+};
+
+export { handleClick, handleMobileClick };

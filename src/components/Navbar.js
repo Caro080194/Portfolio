@@ -1,31 +1,51 @@
-import useScreenSize from "../hooks/useScreenSize";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun } from '@fortawesome/free-solid-svg-icons';
-import handleClick from "../helps/navClick";
-
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { handleClick, handleMobileClick } from "../helps/navClick";
+import { useMobileMenu } from "../hooks/useMobileMenu";
 
 const Navbar = () => {
+  const { mobile, showMenu, toggleMenu } = useMobileMenu();
 
   return (
     <Navcontainer>
-        <Logo>
-          <img src="/assets/Cat-Emoji.png" alt="Logo"/>
-            Caroline Le Ny
-        </Logo>
+      <Logo>
+        <img src="/assets/Cat-Emoji.png" alt="Logo" />
+        Caroline Le Ny
+      </Logo>
+      {!mobile && (
         <NavLink>
-        <Button onClick={() => handleClick("home")}>Home</Button>
-        <Button onClick={() => handleClick("about")}>About me</Button>
-        <Button onClick={() => handleClick("projects")}>Projects</Button>
-        <Button onClick={() => handleClick("contacts")}>Contacts</Button>
-        <Button onClick={() => window.open('https://raw.githubusercontent.com/Caro080194/Portfolio/main/CV.pdf', '_blank')}>CV</Button>
-          <IconButton>
-            <FontAwesomeIcon icon={faSun} />
-          </IconButton>
+          <Button onClick={() => handleClick("home")}>Home</Button>
+          <Button onClick={() => handleClick("about")}>About</Button>
+          <Button onClick={() => handleClick("projects")}>Projects</Button>
+          <Button onClick={() => handleClick("contacts")}>Contacts</Button>
+          <Button onClick={() => window.open('https://raw.githubusercontent.com/Caro080194/Portfolio/main/CV.pdf', '_blank')}>CV</Button>
         </NavLink>
+      )}
+      {mobile && (
+        <>
+          <MenuIcon onClick={toggleMenu}>
+            <FontAwesomeIcon icon={showMenu ? faTimes : faBars} />
+          </MenuIcon>
+          {showMenu && (
+            <NavMobile>
+              <MenuIcon onClick={toggleMenu}>
+                <FontAwesomeIcon icon={showMenu ? faTimes : faBars} />
+              </MenuIcon>
+              <NavLinkMobile>
+                <Button onClick={() => handleMobileClick("home", toggleMenu)}>Home</Button>
+                <Button onClick={() => handleMobileClick("about", toggleMenu)}>About</Button>
+                <Button onClick={() => handleMobileClick("projects", toggleMenu)}>Projects</Button>
+                <Button onClick={() => handleMobileClick("contacts", toggleMenu)}>Contacts</Button>
+                <Button onClick={() => window.open('https://raw.githubusercontent.com/Caro080194/Portfolio/main/CV.pdf', '_blank')}>CV</Button>
+              </NavLinkMobile>
+            </NavMobile>
+          )}
+        </>
+      )}
     </Navcontainer>
-  )
-}
+  );
+};
 
 export default Navbar;
 
@@ -34,7 +54,7 @@ const Navcontainer = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   background-color: var(--primary-color);
@@ -42,6 +62,12 @@ const Navcontainer = styled.nav`
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   z-index: 1000;
+
+  
+  /* Phones css */
+  @media only screen and (max-width: 767px) {
+   
+  }
 `;
 
 const Logo = styled.div`
@@ -49,10 +75,20 @@ const Logo = styled.div`
   align-items: center;
   gap: 1rem;
   font-weight: bold;
-  margin-left: 20px;
+
+  /* Phones css */
+  @media only screen and (max-width: 767px) {
+    font-weight: normal;
+
+    img{
+      width: 22%;
+      padding- left: 5px;
+      padding-bottom: 5px;
+    }
+  }
 `;
 
-const NavLink = styled.ul `
+const NavLink = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
@@ -61,32 +97,66 @@ const NavLink = styled.ul `
 
 const Button = styled.button`
   margin: 0;
-  padding: 20px;
   background-color: transparent;
   color: var(--secondary-color);
   border: none;
   cursor: pointer;
-  font-size: 1em;
   transition: background-color 0.3s ease;
+  font-size: 1em; // Set default font size
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
   }
+
+  /* Phones css */
+  @media only screen and (max-width: 767px) {
+    font-size: 0.9em;
+    padding: 5px 10px;
+  }
+
+  /* tablets css */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 1em;
+    padding: 10px 7px;
+  }
+
+  /* Desktop css */
+  @media only screen and (min-width: 1025px) {
+    font-size: 1.1em;
+    padding: 15px 20px;
+  }
 `;
 
-const IconButton = styled(Button)`
-  border: solid green;
+/* Phones style components */
+const MenuIcon = styled.div`
+  display: none;
+
+  @media only screen and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 40px;
+
+    svg {
+      font-size: 20px;
+    }
+  }
+`;
+
+const NavMobile = styled.nav`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
   background-color: var(--primary-color);
-  border-radius: 50%;
-  padding: 15px;
-  margin-right: 20px;
-  svg {
-    color: var(--secondary-color);
-  }
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  `;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-  }
-`;
+const NavLinkMobile = styled(NavLink)`
+  flex-direction: column;
+  `;

@@ -1,4 +1,3 @@
-import useScreenSize from "../hooks/useScreenSize";
 import styled from "styled-components";
 
 const Footer = () => {
@@ -17,13 +16,24 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div `
-    width: 100%;
+    width: 100vw;
     height: 80px;
     background: var(--primary-color);
     border-radius: 40px 40px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    /* Phones css */
+    @media only screen and (max-width: 767px) {
+      height: 40px;
+
+      img{
+        width: 22%;
+        padding- left: 5px;
+        padding-top: 5px;
+      }
+    }
 `;
 
 const Logo = styled.div`
@@ -33,4 +43,10 @@ const Logo = styled.div`
   color: var(--secondary-color);
   opacity: 0.7;
   margin: 20px;
+
+  /* Phones css */
+  @media only screen and (max-width: 767px) {
+    margin: 10px;
+    font-size: 0.5em;
+  }
 `;

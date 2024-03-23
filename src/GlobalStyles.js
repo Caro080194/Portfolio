@@ -17,19 +17,8 @@ const GlobalStyles = createGlobalStyle `
     background-color: var(--secondary-color);
     margin: 0;
     padding: 0;
-  }
-  
-  h1, h2, h4, h5, h6 {
-    font-family: var(--font-family);
-    font-weight: bold;
-    font-size: var(--heading-font-size);
-  }
-
-  h3 {
-    font-family: var(--font-family);
-    font-weight: bold;
-    font-size: 3em;
-    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
   }
   
 `;
