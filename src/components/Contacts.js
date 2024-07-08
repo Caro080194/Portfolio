@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import {useContactsClick} from '../hooks/useContactsClick';
+import { useContactsClick } from '../hooks/useContactsClick';
 import { handleMailButton } from "../helps/contactsClick";
 
 const Contact = ({ id }) => {
-    const { name, email, projectDescription, handleEmailChange, handleNameChange,handleProjectDescriptionChange  } = useContactsClick();
+    const { name, email, projectDescription, handleEmailChange, handleNameChange, handleProjectDescriptionChange } = useContactsClick();
 
     return (
         <ContactContainer id={id}>
@@ -18,20 +18,20 @@ const Contact = ({ id }) => {
                     <Input type="text" placeholder="Enter your name" value={name} onChange={handleNameChange} />
                     <Input type="email" placeholder="Your email address" value={email} onChange={handleEmailChange} />
                     <StyledTextarea
-                      placeholder="Describe your project"
-                      value={projectDescription}
-                      onChange={handleProjectDescriptionChange}
+                        placeholder="Describe your project"
+                        value={projectDescription}
+                        onChange={handleProjectDescriptionChange}
                     />
                 </InputContainer>
                 <SubmitButton type="submit">Send</SubmitButton>
                 <Logo>
-                  <Para>@Caroline Le Ny</Para>
-                  <a href="#" target="" rel="">
-                    <FontAwesomeIcon icon={faInstagram} color="var(--secondary-color)" size="3x" />
-                  </a>
-                  <a href="#" target="" rel="">
-                    <FontAwesomeIcon icon={faLinkedin} color="var(--secondary-color)" size="3x" />
-                  </a>
+                    <MailLink href="mailto: caroline.leny@live.fr">@Caroline Le Ny</MailLink>
+                    <a href="https://www.instagram.com/odysseyincode/" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faInstagram} color="var(--secondary-color)" size="3x" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/caroline-le-ny/" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faLinkedin} color="var(--secondary-color)" size="3x" />
+                    </a>
                 </Logo>
             </FormContainer>
         </ContactContainer>
@@ -45,13 +45,11 @@ const ContactContainer = styled.div`
     background-size: cover;
     background-position: center;
     height: 700px;
-    width: 100vw;
     border-radius: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 200px;
     left: 80px;
     right: 80px;
 
@@ -78,8 +76,6 @@ const MailContainer = styled.div`
     align-items: flex-start;
     padding: 0px;
     gap: 32px;
-    margin: 0 auto 0 20px;
-    width: 600px;
 
     /* Phones css */
     @media only screen and (max-width: 767px) {
@@ -127,9 +123,6 @@ const FormContainer = styled.form`
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin: 0 20px 0 auto;
-    width: 400px;
-    height: 506px;
     background-color: var(--primary-color);
     border-radius: 30px;
     padding: 20px;
@@ -264,6 +257,7 @@ const Logo = styled.div`
     }
 `;
 
-const Para = styled.p`
+const MailLink = styled.a`
     color: var(--secondary-color);
+    text-decoration: none;
 `;

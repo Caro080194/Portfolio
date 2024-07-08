@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <Navcontainer>
       <Logo>
-        <img src="/assets/Cat-Emoji.png" alt="Logo" />
+        <img src="/assets/compass.png" alt="Logo" />
         Caroline Le Ny
       </Logo>
       {!mobile && (
@@ -55,7 +55,7 @@ const Navcontainer = styled.nav`
   top: 0;
   left: 0;
   width: 100vw;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -73,9 +73,11 @@ const Navcontainer = styled.nav`
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   font-weight: bold;
+  font-size: 1.5rem;
 
+  
   /* Phones css */
   @media only screen and (max-width: 767px) {
     font-weight: normal;
@@ -92,7 +94,7 @@ const NavLink = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 const Button = styled.button`

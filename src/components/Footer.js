@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
 const Footer = () => {
-    return (
-        <FooterContainer>
-          <Logo>
-           <img src="/assets/Cat-Emoji.png" alt="Logo"/>
-            Caroline Le Ny
-          </Logo>
-          <Logo>@caroline.leny 2024</Logo>
-          <Logo>PRIVACY-TERMS</Logo>
-        </FooterContainer>
-    )
+  return (
+    <FooterContainer>
+      <Logo>
+        <img src="/assets/compass.png" alt="Logo" />
+        Caroline Le Ny
+      </Logo>
+      <Logo>
+        <a href="mailto: caroline.leny@live.fr">@caroline.leny 2024</a>
+      </Logo>
+    </FooterContainer>
+  )
 }
 
 export default Footer;
 
-const FooterContainer = styled.div `
+const FooterContainer = styled.div`
     width: 100vw;
     height: 80px;
     background: var(--primary-color);
@@ -43,6 +44,11 @@ const Logo = styled.div`
   color: var(--secondary-color);
   opacity: 0.7;
   margin: 20px;
+
+   a{
+       color: var(--secondary-color);
+       text-decoration: none;
+   }
 
   /* Phones css */
   @media only screen and (max-width: 767px) {

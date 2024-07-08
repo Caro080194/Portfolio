@@ -1,30 +1,53 @@
-import styled, { css }from "styled-components";
+import styled, { css } from "styled-components";
 
-const Projects = ({id}) => {
+const Projects = ({ id }) => {
     return (
         <ProjectsContainer id={id}>
             <Header>Take a look at some of my projects</Header>
             <ProjectCards>
-                <ProjectCard>
-                    <ProjectBackgroundImage src="/assets/projet-1.png" alt="Project 1" />
+                {/* <ProjectCard>
+                    <h1>Game, Object-Oriented Programming</h1>
+                    <ProjectLinks>
+                        <a href="https://github.com/your-github-repo/project-1" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://your-live-website-url/project-1" target="_blank" rel="noopener noreferrer">Live Version</a>
+                    </ProjectLinks>
+                    <ProjectBackgroundImage src="/assets/project-1.png" alt="Project 1" />
                     <ProjectDetails>
-                        <p>This project undertaken during my participation in the Concordia Bootcamp. While a substantial portion of the codebase was provided, the main aim was to reinforce Object-Oriented Programming principles.
-                            <br/>My first task was to ensure basic game functionality. Once accomplished, I neede to make the game "mine", i chose the theme "The Lion King".
-                            <br/>To enrich user experience, I incorporated background music that users could control with a dedicated button. Additionally, I introduced scoring mechanisms and a "try again" feature to enhance gameplay and encourage repeated engagement.
-                            <br/>This project provided valuable insights into problem-solving and software design, while also fostering creative exploration within JS programming.
+                        <p>This project was undertaken during my studies at Concordia University. While a substantial portion of the codebase was provided, the main aim was to reinforce Object-Oriented Programming principles.
+                            <br />My first task was to ensure basic game functionality. Once accomplished, I made the game my own, choosing "The Lion King" as the theme.
+                            <br />To enhance user experience, I incorporated background music that users could control with a dedicated button. Additionally, I introduced scoring mechanisms and a "try again" feature to improve gameplay and encourage repeated engagement.
+                            <br />This project provided valuable insights into problem-solving and software design, while also fostering creative exploration within JavaScript programming.
                         </p>
                     </ProjectDetails>
-                </ProjectCard>
+                </ProjectCard> */}
                 <ProjectCard>
-                    <ProjectBackgroundImage src="/assets/work-progress.jpg" alt="Project 2" />
+                    <h1>E-Commerce Website</h1>
+                    <ProjectLinks>
+                        <a href="https://github.com/Caro080194/Group-Project-E-commerce" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://e-wear-emporium-ak60e9a1d-caroline-le-nys-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Live Version</a>
+                    </ProjectLinks>
+                    <ProjectBackgroundImage src="/assets/project-2.png" alt="Project 2" />
                     <ProjectDetails>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.orem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>This project was a collaborative effort, emphasizing teamwork and leveraging diverse coding styles and strengths within our team. We were provided with raw data and tasked with developing a full-fledged E-Commerce website using the MERN stack.</p>
+                        <br />
+                        <p>My primary responsibilities included setting up backend handlers and endpoints to manage data interactions, ensuring seamless communication between the backend and frontend. Additionally, I contributed to CSS styling for various components to ensure a cohesive user interface.</p>
+                        <br />
+                        <p>This experience provided invaluable lessons in collaborative development, including how to integrate different coding styles and strengths effectively. It underscored the importance of communication and coordination in delivering a complex project successfully.</p>
                     </ProjectDetails>
                 </ProjectCard>
                 <ProjectCard>
-                    <ProjectBackgroundImage src="/assets/work-progress.jpg" alt="Project 3" />
+                    <h1>Fitness Website</h1>
+                    <ProjectLinks>
+                        <a href="https://github.com/Caro080194/MMFJ" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://motion-mind-fitness-journey-oixmi4du8-caroline-le-nys-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Live Version</a>
+                    </ProjectLinks>
+                    <ProjectBackgroundImage src="/assets/project-3.png" alt="Project 3" />
                     <ProjectDetails>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.orem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>For my final project at Concordia University, I developed a Fitness Website using the MERN stack, integrated with the YouTube API. The primary focus of the website was to provide users with easy access to mobility routines and help them track their Personal Records (PR).</p>
+                        <br />
+                        <p>The YouTube API was utilized to dynamically fetch and display relevant fitness videos, enhancing user engagement and providing valuable instructional content. Additionally, the API facilitated the retrieval of additional information to enrich the user experience.</p>
+                        <br />
+                        <p>This project highlighted my skills in integrating APIs, frontend-backend communication, and creating user-friendly interfaces aimed at promoting health and wellness. It reinforced my ability to leverage technology to solve real-world problems effectively.</p>
                     </ProjectDetails>
                 </ProjectCard>
             </ProjectCards>
@@ -34,104 +57,97 @@ const Projects = ({id}) => {
 
 export default Projects;
 
-const ProjectsContainer = styled.div `
-background-color: var(--primary-color);
-height: 100vh;
-padding: 60px 20px;
-border-radius: 30px;
-
-/* Tablets css */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    padding: 40px 10px;
-    height: auto;
-}
-
-/* Phones css */
-@media only screen and (max-width: 767px) {
-    padding: 20px 5px;
-}
-`;
-
-const Header = styled.h3 `
-color: var(--secondary-color);
-text-align: center;
-padding: 20px;
-font-size: 2em;
-
-/* Phones css */
-@media only screen and (max-width: 767px) {
-font-size: 1.3em;
-padding:10px;
-}
-`;
-
-const ProjectCards = styled.div `
+const ProjectsContainer = styled.div`
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 60px 20px;
+    border-radius: 30px;
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
 
     /* Tablets css */
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 60px;
+        padding: 40px 10px;
         height: auto;
     }
 
     /* Phones css */
     @media only screen and (max-width: 767px) {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 60px;
+        padding: 20px 5px;
     }
 `;
 
-const ProjectCard = styled.div `
+const Header = styled.h1`
+   color: var(--secondary-color);
+   text-align: center;
+   padding: 20px;
+   margin-bottom: 50px;
+   font-size: 4em;
+
+   /* Phones css */
+   @media only screen and (max-width: 767px) {
+      font-size: 1.2em;
+      padding:10px;
+      margin-bottom: 30px;
+  }
+`;
+
+const ProjectCards = styled.div`
+    margin-top: 20px;
+    height: auto;
+
+    h1{
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    }
+
+    /* Tablets/phones css */
+    @media only screen and (max-width: 1023px) {
+        margin-top: 60px;
+        h1{
+          font-size: 1rem;
+        }
+    }
+`;
+
+const ProjectCard = styled.div`
     position: relative;
-    border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 90px;
+    border-radius: 15px;
 
     &:hover {
-        transform: scale(1.4);
+        transform: scale(1.2);
     }
 
     
     /* Desktop css */
     @media only screen and (min-width: 1024px) {
-        width: 350px;
-        height: 300px;
+        width: 40vw;
     }
 
-    /* Tablets css */
-    @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        width: 450px;
-        height: 400px;
+    /* Tablets/phones css */
+    @media only screen and (max-width: 1023px) {
+        width: 80vw;
         margin-bottom: 30px;
         &:hover {
             transform: scale(1.1);
         }
     }
-
-    /* Phones css */
-    @media only screen and (max-width: 767px) {
-        width: 80vw;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
 `;
 
-const ProjectBackgroundImage = styled.img `
+const ProjectBackgroundImage = styled.img`
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
+    border-radius: 15px;
 `;
 
-const ProjectDetails = styled.div `
+const ProjectDetails = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
@@ -172,6 +188,27 @@ const ProjectDetails = styled.div `
             margin: 0;
             font-size: 0.7em;
             line-height: 1;
+        }
+    }
+`;
+
+const ProjectLinks = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px auto;
+
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
         }
     }
 `;

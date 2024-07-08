@@ -2,21 +2,21 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 
-const AboutMe = ({id}) => {
+const AboutMe = ({ id }) => {
     return (
         <AboutMeContainer id={id}>
-            <Picture src="/assets/Profil-picture.jpg" alt="profil-picture"/>
+            <Picture src="/assets/Profil-picture.jpg" alt="profil-picture" />
             <Presentation>
                 <h3>I started this journey in 2023</h3>
                 <Para>Greetings! 🌟
-                    <br/>I'm a French expatriate, now proudly calling the vibrant city of Montreal my home. With a diverse professional background, I've honed the ability to swiftly adapt and embrace new challenges. My journey has led me through various industries, each contributing to my versatile skill set and fostering a passion for continuous learning.
-                    <br/>Sports are my greatest passion, and I'm always eager to explore new activities and adventures. Whether it's hitting the slopes, diving into the ocean, or simply enjoying a hike in nature, I thrive on the exhilaration of physical activity.
-                    <br/>Currently, I'm immersed in the immersive world of coding, undertaking a rigorous bootcamp at Concordia University to transition into a junior developer role. The dynamic nature of the tech industry resonates with my love for challenge and growth, inspiring me to push boundaries and expand my skill set.
-                    <br/>Explore my portfolio of projects, each reflecting my dedication, creativity, and commitment to excellence. If you're inspired by what you see and have a project in mind, don't hesitate to reach out! I'm always excited to collaborate and bring ideas to life.
-                    <br/>Let's embark on a journey of innovation and creativity together. Get in touch, and let's make magic happen! ✨ 
+                    <br />I'm a French expatriate, now proudly calling the vibrant city of Montreal my home. With a diverse professional background, I've honed the ability to swiftly adapt and embrace new challenges. My journey has led me through various industries, each contributing to my versatile skill set and fostering a passion for continuous learning.
+                    <br />Sports are my greatest passion, and I'm always eager to explore new activities and adventures. Whether it's hitting the slopes, diving into the ocean, or simply enjoying a hike in nature, I thrive on the exhilaration of physical activity.
+                    <br />Currently, I hold a diploma in Full Stack Web Development from Concordia University, where I immersed myself in the dynamic world of coding through a rigorous bootcamp. The tech industry's dynamic nature resonates with my love for challenge and growth, inspiring me to push boundaries and expand my skill set.
+                    <br />Explore my portfolio of projects, each reflecting my dedication, creativity, and commitment to excellence. If you're inspired by what you see and have a project in mind, don't hesitate to reach out! I'm always excited to collaborate and bring ideas to life.
+                    <br />Let's embark on a journey of innovation and creativity together. Get in touch, and let's make magic happen! ✨
                 </Para>
                 <ListLogo>
-                    <li><FontAwesomeIcon icon={faHtml5} size="4x"/></li>
+                    <li><FontAwesomeIcon icon={faHtml5} size="4x" /></li>
                     <li><FontAwesomeIcon icon={faReact} size="4x" /></li>
                     <li><FontAwesomeIcon icon={faNodeJs} size="4x" /></li>
                 </ListLogo>
@@ -27,7 +27,7 @@ const AboutMe = ({id}) => {
 
 export default AboutMe;
 
-const AboutMeContainer = styled.div `
+const AboutMeContainer = styled.div`
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ const AboutMeContainer = styled.div `
     @media only screen and (min-width: 1025px) {
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin: 80px 20px;
     }
 
@@ -52,7 +52,7 @@ const AboutMeContainer = styled.div `
     }
 `;
 
-const Picture = styled.img `
+const Picture = styled.img`
     border-radius: 30px;
     width: 100%;
 
@@ -115,7 +115,7 @@ const Presentation = styled.div`
     }
 `;
 
-const Para = styled.p `
+const Para = styled.p`
     text-align: justify;
     padding: 30px 0;
     line-height: 2;
@@ -133,7 +133,7 @@ const Para = styled.p `
     }
 `;
 
-const ListLogo = styled.ul `
+const ListLogo = styled.ul`
     list-style: none;
     display: flex;
     justify-content: center;
